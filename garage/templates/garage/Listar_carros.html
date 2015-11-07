@@ -1,20 +1,21 @@
+{% load staticfiles %}
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>CARROS</title>
     </head>
     <body>
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1><a href="">Lista de Carros</a></h1>
         </div>
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+          {% for d in dato %}
+              <div>
+                  <h1>{{ d.marca }}({{ d.modelo }})</h1>
+                  <img src="{% static d.imagen %}" style="width:260px;height:200px">
+                  <p>{{ d.descripcion|linebreaks }}</p>
+                  <p>Fecha: {{ d.fecha }}</p>
+              </div>
+          {% endfor %}
         </div>
     </body>
 </html>

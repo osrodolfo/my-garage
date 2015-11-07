@@ -17,7 +17,7 @@ class Registro(models.Model):
     vendido = models.BooleanField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     fecha = models.DateTimeField(default=timezone.now)
-    imagen = models.ImageField(upload_to='static', blank = True)
+    imagen = models.ImageField(upload_to='imagenes', blank = True)
 
     def __str__(self):
         return self.correo
