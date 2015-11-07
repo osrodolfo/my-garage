@@ -11,7 +11,7 @@
           {% for d in dato %}
               <div>
                   <h1>{{ d.marca }}({{ d.modelo }})</h1>
-                  <img src="{% static d.imagen %}" style="width:280px;height:200px">
+                  <img src="{% static d.imagen %}" style="width:300px;height:200px">
                   <p>{{ d.descripcion|linebreaks }}</p>
                   <p>Fecha: {{ d.fecha }}</p>
               </div>
