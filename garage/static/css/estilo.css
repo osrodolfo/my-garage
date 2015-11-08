@@ -28,20 +28,39 @@ p {
     text-decoration: none;
 }
 
+.vendido p {
+    color: FireBrick;
+    font-size: 50pt;
+    text-decoration: none;
+    font-family:'Orbitron';
+    text-align: center;
+}
+
 .content {
     margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster';
+    font-size: 30pt;
+    color: #000000;
+}
+
+h2 a {
+    font-family: 'Lobster';
+    font-size: 30pt;
+    color: #000000;
 }
 
 .parte2 {
-    float: right;
-    color: Blue;
+  margin: auto;
+  margin-bottom: 80px;
+  text-align: center;
 }
 .info {
     color: Blue;
+    font-size: 15pt;
+    font-family: 'Patua One'
 }
 .save {
     float: right;

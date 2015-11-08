@@ -1,0 +1,21 @@
+{% extends "garage/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+      <div class="parte2">
+        {% if dato.vendido %}
+                <img src="{% static dato.imagen %}" style="width:320px;height:200px">
+                <div class="vendido">
+                  <p>Lo sentimos este auto ha sido VENDIDO</p>
+                </div>
+        {% else %}
+                <img src="{% static dato.imagen %}" style="width:320px;height:200px">
+              <div class="info">
+                 <p>Propietario: {{ dato.usuario }}</p>
+                 <p>Correo: {{ dato.correo }}</p>
+                 <p>Precio: {{ dato.precio }}</p>
+              </div>
+              <p>{{ dato.descripcion|linebreaks }}</p>
+        {% endif %}
+      </div>
+{% endblock content %}

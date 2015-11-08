@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Autos</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+            <center><h1><a>Autos de Lujo</a></h1></center>
+        </div>
+        <div class="content container">
+              <div class="row">
+                {% block content %}
+                {% endblock %}
+              </div>
+        </div>
+    </body>
+</html>

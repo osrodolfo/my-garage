@@ -1,38 +1,24 @@
+{% extends "garage/base.html" %}
 {% load staticfiles %}
-<html>
-    <head>
-        <title>CARROS</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static "css/estilo.css" %}">
-        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="page-header">
-            <center><h1><a href="">Lista de Carros</a></h1></center>
-        </div>
-        <div class="content container">
-              <div class="row">
-                  {% for d in dato %}
-                      <div class="col-md-8">
-                      <div class="post">
-                      <h1>{{ d.marca }}({{ d.modelo }})</h1>
-                      <div class="info">
-                      <p>Correo: {{ d.correo }}</p>
-                      <p>Precio: {{ d.precio }}</p>
-                      <p>Fecha: {{ d.fecha }}</p>
-                      </div>
-                      <p>{{ d.descripcion|linebreaks }}</p>
-                      </div>
-                      <hr/>
-                      </div>
-                      <div class="col-md-4">
-                      <div class="post">
-                      <img src="{% static d.imagen %}" style="width:300px;height:200px">
-                      </div>
-                      </div>
-                  {% endfor %}
-              </div>
-        </div>
-    </body>
-</html>
+
+{% block content %}
+      {% for d in dato %}
+          <div class="col-md-8">
+            <div class="post">
+                <h2><a href="{% url "garage.views.Detalles" pk=d.pk %}">{{ d.marca }}({{ d.modelo }})</a></h2>
+                <div class="info">
+                   <p>Correo: {{ d.correo }}</p>
+                   <p>Precio: {{ d.precio }}</p>
+                   <p>Fecha: {{ d.fecha }}</p>
+                </div>
+                <p>{{ d.descripcion|linebreaks }}</p>
+            </div>
+            <hr/>
+          </div>
+          <div class="col-md-4">
+            <div class="post">
+              <img src="{% static d.imagen %}" style="width:320px;height:200px">
+            </div>
+          </div>
+      {% endfor %}
+{% endblock content %}
