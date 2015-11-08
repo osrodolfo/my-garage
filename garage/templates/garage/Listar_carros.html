@@ -2,20 +2,34 @@
 <html>
     <head>
         <title>CARROS</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static "css/estilo.css" %}">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div>
-            <h1><a href="">Lista de Carros</a></h1>
+        <div class="page-header">
+            <center><h1><a href="">Lista de Carros</a></h1></center>
         </div>
-        <div>
-          {% for d in dato %}
-              <div>
-                  <h1>{{ d.marca }}({{ d.modelo }})</h1>
-                  <img src="{% static d.imagen %}" style="width:300px;height:200px">
-                  <p>{{ d.descripcion|linebreaks }}</p>
-                  <p>Fecha: {{ d.fecha }}</p>
+        <div class="content container">
+              <div class="row">
+                <div class="col-md-8">
+                  {% for d in dato %}
+                      <div class="post">
+                          <div class="parte2">
+                          <img src="{% static d.imagen %}" style="width:300px;height:200px">
+                          </div>
+                          <h1>{{ d.marca }}({{ d.modelo }})</h1>
+                          <div class="info">
+                          <p>Correo: {{ d.correo }}</p>
+                          <p>Precio: {{ d.precio }}</p>
+                          <p>Fecha: {{ d.fecha }}</p>
+                          </div>
+                          <p>{{ d.descripcion|linebreaks }}</p>
+                      </div>
+                  {% endfor %}
+                </div>
               </div>
-          {% endfor %}
         </div>
     </body>
 </html>
