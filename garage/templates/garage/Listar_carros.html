@@ -13,22 +13,25 @@
         </div>
         <div class="content container">
               <div class="row">
-                <div class="col-md-8">
                   {% for d in dato %}
+                      <div class="col-md-8">
                       <div class="post">
-                          <div class="parte2">
-                          <img src="{% static d.imagen %}" style="width:300px;height:200px">
-                          </div>
-                          <h1>{{ d.marca }}({{ d.modelo }})</h1>
-                          <div class="info">
-                          <p>Correo: {{ d.correo }}</p>
-                          <p>Precio: {{ d.precio }}</p>
-                          <p>Fecha: {{ d.fecha }}</p>
-                          </div>
-                          <p>{{ d.descripcion|linebreaks }}</p>
+                      <h1>{{ d.marca }}({{ d.modelo }})</h1>
+                      <div class="info">
+                      <p>Correo: {{ d.correo }}</p>
+                      <p>Precio: {{ d.precio }}</p>
+                      <p>Fecha: {{ d.fecha }}</p>
+                      </div>
+                      <p>{{ d.descripcion|linebreaks }}</p>
+                      </div>
+                      <hr/>
+                      </div>
+                      <div class="col-md-4">
+                      <div class="post">
+                      <img src="{% static d.imagen %}" style="width:300px;height:200px">
+                      </div>
                       </div>
                   {% endfor %}
-                </div>
               </div>
         </div>
     </body>
