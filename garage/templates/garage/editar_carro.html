@@ -1,0 +1,10 @@
+{% extends "garage/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>Nuevo Registro</h1>
+    <form enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">GUARDAR</button>
+    </form>
+{% endblock %}
