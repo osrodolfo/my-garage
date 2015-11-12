@@ -37,3 +37,16 @@ def Editar(request, pk):
         else:
             form = RegistroForm(instance=dato)
         return render(request, 'garage/editar_carro.html', {'form': form})
+
+def Eliminar(request, pk):
+        dato = get_object_or_404(Registro, pk=pk)
+        if request.method == "POST":
+            form = RegistroForm(request.POST, request.FILES,instance=dato)
+            if form.is_valid():
+                form = form.save(commit=False)
+                form.user = request.user
+                form.save()
+                return redirect('garage.views.Detalles', pk=form.pk)
+        else:
+            form = RegistroForm(instance=dato)
+        return render(request, 'garage/editar_carro.html', {'form': form})

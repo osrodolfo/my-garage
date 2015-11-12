@@ -12,6 +12,7 @@
                 <img src="{% static dato.imagen %}" style="width:320px;height:200px">
               <div class="info">
               <a class="btn btn-default" href="{% url 'Editar' pk=dato.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-default" href="{% url 'Eliminar' pk=dato.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                  <p>Propietario: {{ dato.usuario }}</p>
                  <p>Correo: {{ dato.correo }}</p>
                  <p>Precio: {{ dato.precio }}</p>

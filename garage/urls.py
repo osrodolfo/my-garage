@@ -6,4 +6,5 @@ urlpatterns = [
     url(r'^dato/(?P<pk>[0-9]+)/$', views.Detalles),
     url(r'^dato/new/$', views.Nuevo, name='Nuevo'),
     url(r'^dato/(?P<pk>[0-9]+)/edit/$', views.Editar, name='Editar'),
+    url(r'^dato/(?P<pk>[0-9]+)/delet/$', views.Eliminar, name='Eliminar'),
 ]
