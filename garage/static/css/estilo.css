@@ -16,6 +16,13 @@ p {
   text-align: justify;
 }
 
+.borrar p {
+    color: FireBrick;
+    font-size: 30pt;
+    font-family:'Chewy';
+    text-align: center;
+}
+
 .page-header {
     background-color: FireBrick;
     margin-top: 0;
@@ -30,9 +37,9 @@ p {
 
 .vendido p {
     color: FireBrick;
-    font-size: 50pt;
+    font-size: 30pt;
     text-decoration: none;
-    font-family:'Orbitron';
+    font-family:'Chewy';
     text-align: center;
 }
 
@@ -60,7 +67,7 @@ h2 a {
 .info {
     color: Blue;
     font-size: 15pt;
-    font-family: 'Patua One'
+    font-family: 'Patua One';
 }
 .save {
     float: right;

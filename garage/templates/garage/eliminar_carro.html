@@ -1,0 +1,16 @@
+{% extends "garage/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<center> <h1>Eliminar Registro</h1></center>
+    <form enctype="multipart/form-data" method="POST">{% csrf_token %}
+      <div class="vendido">
+        <p>Seguro que quieres eliminar el carro</p>
+        <p>{{ dato.marca }}({{ dato.modelo }})</p>
+      </div>
+      <center>
+        <img src="{% static dato.imagen %}" style="width:320px;height:200px">
+        <button type="submit" class="save btn btn-default">ELIMINAR</button>
+      </center>
+    </form>
+{% endblock %}
