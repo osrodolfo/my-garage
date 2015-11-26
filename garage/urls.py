@@ -2,6 +2,8 @@ from django.conf.urls import include, url
 from . import views
 
 urlpatterns = [
+    url(r'^accounts/login/$', views.Login,name='Login'),
+    url(r'^accounts/logout/$', views.Logout,name='Logout'),
     url(r'^$', views.Listar),
     url(r'^dato/(?P<pk>[0-9]+)/$', views.Detalles),
     url(r'^dato/new/$', views.Nuevo, name='Nuevo'),

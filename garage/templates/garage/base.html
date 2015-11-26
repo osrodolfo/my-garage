@@ -8,9 +8,11 @@
         <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
+      {% if user.is_authenticated %}
         <div class="page-header">
             <a href="{% url 'garage.views.Listar' %}" class="top-menu"><span class="glyphicon glyphicon-list-alt"></span></a>
             <a href="{% url 'garage.views.Nuevo' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <a href="{% url "garage.views.Logout" %}" class="top-menu1"><span class="glyphicon glyphicon-off"></span></a>
             <center><h1><a>Autos de Lujo</a></h1></center>
         </div>
         <div class="content container">
@@ -19,5 +21,8 @@
                 {% endblock %}
               </div>
         </div>
+      {% else %}
+          <h2><a href="{% url "garage.views.Login" %}">Iniciar Sesion</a></h2>
+      {% endif %}
     </body>
 </html>
