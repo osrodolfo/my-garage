@@ -10,7 +10,7 @@
                 </div>
         {% else %}
                 <img src="{% static dato.imagen %}" style="width:320px;height:200px">
-              <div class="info">
+              <div class="info" style="background-color:White;">
                 {% if user == dato.usuario %}
               <a class="btn btn-default" href="{% url 'Editar' pk=dato.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
               <a class="btn btn-default" href="{% url 'Eliminar' pk=dato.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
@@ -19,7 +19,9 @@
                  <p>Correo: {{ dato.correo }}</p>
                  <p>Precio: {{ dato.precio }}</p>
               </div>
+              <div style="background-color:White;">
               <p>{{ dato.descripcion|linebreaks }}</p>
+              </div>
         {% endif %}
       </div>
 {% endblock content %}

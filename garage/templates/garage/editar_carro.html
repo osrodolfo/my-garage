@@ -3,7 +3,7 @@
 
 {% block content %}
     <h1> Registrar Auto</h1>
-    <form enctype="multipart/form-data" method="POST" class="post-form">{% csrf_token %}
+    <form enctype="multipart/form-data" method="POST" class="post-form" style="background-color:White;">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">GUARDAR</button>
     </form>
