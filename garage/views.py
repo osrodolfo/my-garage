@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.utils import timezone
 from .models import Registro
 from django.shortcuts import render, get_object_or_404
-from .forms import RegistroForm, LoginForm
+from .forms import RegistroForm, LoginForm, RegistroUserForm
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
 def Listar(request):
     dato = Registro.objects.filter(fecha__lte=timezone.now()).order_by('fecha')
@@ -70,3 +71,28 @@ def Logout(request):
     logout(request)
     # Redirect to a success page.
     return redirect('garage.views.Login')
+
+def RegistroUser(request):
+    if request.method == 'POST':
+        # Si el method es post, obtenemos los datos del formulario
+        form = RegistroUserForm(request.POST)
+        # Comprobamos si el formulario es valido
+        if form.is_valid():
+            # En caso de ser valido, obtenemos los datos del formulario.
+            # form.cleaned_data obtiene los datos limpios y los pone en un
+            # diccionario con pares clave/valor, donde clave es el nombre del campo
+            # del formulario y el valor es el valor si existe.
+            cleaned_data = form.cleaned_data
+            username = cleaned_data.get('username')
+            password = cleaned_data.get('password')
+            # E instanciamos un objeto User, con el username y password
+            user = User.objects.create_user(username=username, password=password)
+            # Y guardamos el objeto, esto guardara los datos en la db.
+            user.save()
+            return redirect('garage.views.Login')
+    else:
+        # Si el mthod es GET, instanciamos un objeto RegistroUserForm vacio
+        form = RegistroUserForm()
+    # Creamos el contexto
+    context = {'form': form}
+    return render(request, 'garage/registrar.html', context)

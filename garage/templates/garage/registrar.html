@@ -10,16 +10,14 @@
 </head>
 <body>
   <section class="container">
-    <div class="login">
-      <h1>Login</h1>
-      <form method="POST">{% csrf_token %}
+  <div class="login">
+      <h1>Registro Usuario</h1>
+      <form method="post">
+          {% csrf_token %}
           {{ form.as_p }}
-          <button type="submit">LOGIN</button>
+          <button type="submit" class="btn btn-primary">Registrar</button>
       </form>
-      {% if mensaje %}
-      <h2>{{ mensaje }}</h2>
-      {% endif %}
-    </div>
+  </div>
   </section>
 </body>
 </html>

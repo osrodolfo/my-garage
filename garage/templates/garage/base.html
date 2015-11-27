@@ -22,7 +22,9 @@
               </div>
         </div>
       {% else %}
-          <h2><a href="{% url "garage.views.Login" %}">Iniciar Sesion</a></h2>
+          <center><h2><a href="{% url "garage.views.Login" %}">Iniciar Sesion</a></h2></center>
+          <br><br><br>
+          <center><h2><a href="{% url "garage.views.RegistroUser" %}">Crear Nuevo Usuario</a></h2></center>
       {% endif %}
     </body>
 </html>

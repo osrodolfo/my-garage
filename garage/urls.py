@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^accounts/login/$', views.Login,name='Login'),
+    url(r'^registrar/$', views.RegistroUser, name='RegistroUser'),
     url(r'^accounts/logout/$', views.Logout,name='Logout'),
     url(r'^$', views.Listar),
     url(r'^dato/(?P<pk>[0-9]+)/$', views.Detalles),
