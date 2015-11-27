@@ -9,7 +9,7 @@
                   <p>Lo sentimos este auto ha sido VENDIDO</p>
                 </div>
         {% else %}
-                <img src="{% static dato.imagen %}" style="width:320px;height:200px">
+                <img src="{% static dato.imagen %}" style="width:330px;height:220px">
               <div class="info" style="background-color:White;">
                 {% if user == dato.usuario %}
               <a class="btn btn-default" href="{% url 'Editar' pk=dato.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
