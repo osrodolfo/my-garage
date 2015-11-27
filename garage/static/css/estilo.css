@@ -20,6 +20,7 @@ hr {
 
 p {
   text-align: justify;
+  color: White;
 }
 
 .borrar p {
@@ -69,6 +70,7 @@ h2 a {
   margin: auto;
   margin-bottom: 80px;
   text-align: center;
+  color: White;
 }
 .info {
     color: Blue;
@@ -80,6 +82,7 @@ h2 a {
 }
 
 .post-form textarea, .post-form input {
+    color: White;
     width: 100%;
 }
 

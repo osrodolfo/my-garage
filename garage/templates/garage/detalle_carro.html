@@ -10,15 +10,15 @@
                 </div>
         {% else %}
                 <img src="{% static dato.imagen %}" style="width:320px;height:200px">
-              <div class="info">
+              <center><div class="info">
                 {% if user == dato.usuario %}
               <a class="btn btn-default" href="{% url 'Editar' pk=dato.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
               <a class="btn btn-default" href="{% url 'Eliminar' pk=dato.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                {% endif %} 
+                {% endif %}
                  <p>Propietario: {{ dato.usuario }}</p>
                  <p>Correo: {{ dato.correo }}</p>
                  <p>Precio: {{ dato.precio }}</p>
-              </div>
+              </div></center>
               <p>{{ dato.descripcion|linebreaks }}</p>
         {% endif %}
       </div>
