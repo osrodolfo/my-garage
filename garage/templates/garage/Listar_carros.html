@@ -3,7 +3,7 @@
 
 {% block content %}
       {% for d in dato %}
-          <div class="col-md-8">
+          <div class="col-md-8" style="background-color:White;">
             <div class="post">
                 <h2><a href="{% url "garage.views.Detalles" pk=d.pk %}">{{ d.marca }}({{ d.modelo }})</a></h2>
                 <div class="info">
